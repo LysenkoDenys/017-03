@@ -1,0 +1,561 @@
+// SET FILES and ELEMENTS:____________________________
+// @import "popup.scss";
+// @import "header.scss";
+// @import "footer.scss";
+
+// start style file:
+@import "start-style.scss";
+
+// fonts file:
+@import "fonts.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Lato:wght@300;400;700;900&family=PT+Sans&family=Playfair+Display&family=Ubuntu&display=swap");
+
+// DEFAULT FONT:
+$Fontfamily: "Lato";
+
+// VARIABLES:___________________________________________
+$minwidth: 320px;
+// minimal widths for different types of monitors:
+$mw: 1100;
+$md1: $mw + 12;
+$md2: 993.98;
+$md3: 767.98;
+$md4: 479.98;
+
+// WRAPPER:____________________________________________
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  // @include flexbox();
+  flex-direction: column;
+  // &.loaded {
+  // }
+}
+
+// BASIC CAGE:_________________________________________
+.container {
+  max-width: $mw + px;
+  margin: 0 auto;
+  width: 100%;
+  @media (max-width: ($md1+px)) {
+    max-width: 970px;
+  }
+  @media (max-width: ($md2+px)) {
+    max-width: 750px;
+  }
+  @media (max-width: ($md3+px)) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+// SET FILES, UI-STYLES, FORMS and CLASSES:_____________
+@import "forms.scss";
+@import "ui.scss";
+@import "baguetteBox.scss";
+
+// patterns:
+
+// MIXINES:_____________________________________________
+@mixin anim($time, $delay) {
+  -webkit-transition: all $time ease $delay;
+  -moz-transition: all $time ease $delay;
+  -ms-transition: all $time ease $delay;
+  -o-transition: all $time ease $delay;
+  // improvisation:
+  transition: all $time ease $delay;
+}
+
+@mixin anim_cubic($time, $delay) {
+  -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+  // improvisation:
+  transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+
+@mixin rotate($deg) {
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -webkit-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin scale($num) {
+  -moz-transform: scale($num);
+  -ms-transform: scale($num);
+  -webkit-transform: scale($num);
+  -o-transform: scale($num);
+  transform: scale($num);
+}
+
+@mixin skew($num) {
+  -webkit-transform: skewX($num);
+  -moz-transform: skewX($num);
+  -ms-transform: skewX($num);
+  -o-transform: skewX($num);
+  transform: skewX($num);
+}
+
+@mixin cnt($h) {
+  display: flex;
+  flex-direction: column;
+  height: $h;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+}
+
+@mixin tr($x, $y, $z) {
+  transform: translate3d($x, $y, $z);
+}
+
+// for correct view flex in different browsers:
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 0;
+}
+
+@mixin flexboxinline() {
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+}
+
+@mixin flexorder($val) {
+  -webkit-box-original-group: $val;
+  -moz-box-original-group: $val;
+  -ms-flex-order: $val;
+  -webkit-order: $val;
+  order: $val;
+}
+
+// ===============================================================================
+// my addition:
+body {
+  font-family: lato;
+}
+
+// 1. MAINBLOCK:==================================================================
+
+.mainblock {
+  flex: 1 1 auto;
+  position: relative;
+  @include flexbox();
+  justify-content: center;
+  // align-items: center;
+  text-align: center;
+  padding: 50px 0px 50px 0px;
+  @media screen and (max-width: ($md2+px)), screen and (max-height: 600px) {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  // .mainblock__content
+  &__content {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    .container {
+      height: 100%;
+      @include flexbox();
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  // .mainblock__logo
+
+  // &__logo {
+  // }
+
+  // .mainblock__text
+
+  &__text {
+    color: #ffffff;
+    position: relative;
+    padding: 0px 0px 45px 0px;
+    margin: 30px 0px 30px 0px;
+    &::after {
+      content: "";
+      width: 105px;
+      height: 2px;
+      background-color: #ffffff;
+      position: absolute;
+      left: 50%;
+      margin: 0px 0px 0px -52.5px;
+      bottom: 0;
+    }
+  }
+
+  // .mainblock__title
+
+  &__title {
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1.176;
+    text-transform: uppercase;
+    letter-spacing: 5.43px;
+    margin: 0px 0px 10px 0px;
+    // set breackpoint for width and height (35:22):
+    @media screen and (max-width: ($md3+px)), screen and (max-height: 600px) {
+      font-size: 25px;
+      line-height: 30px;
+    }
+  }
+  // text-align: center;
+
+  // .mainblock__subtitle
+
+  &__subtitle {
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 4.15px;
+  }
+
+  // .mainblock__footer
+
+  &__footer {
+    @include flexboxinline();
+    flex-direction: column;
+  }
+
+  // .mainblock__btn
+
+  &__btn {
+    margin: 0px 0px 60px 0px;
+    @media screen and (max-width: ($md3+px)), screen and (max-height: 600px) {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+
+  // .mainblock__arrow
+
+  &__arrow {
+    position: relative;
+    animation: arrow 2s infinite ease;
+  }
+
+  @keyframes arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  // for different browsers:
+  @-webkit-keyframes arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @-moz-keyframes arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @-o-keyframes arrow {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  // .mainblock__image
+
+  &__image {
+    // background-effect:
+    position: absolute;
+    // fixed
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+// 2. CONTENT:========================================================================
+
+.content {
+  background-color: #fff;
+  position: relative;
+  z-index: 50;
+}
+
+.menu {
+  padding: 22px 0px 22px 0px;
+  border-bottom: 1px solid #f2f2f2;
+  &_mb {
+    margin: 0px 0px 130px 0px;
+    @media (max-width: ($md2+px)) {
+      margin: 0px 0px 50px 0px;
+    }
+    @media (max-width: ($md3+px)) {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+  @media (max-width: ($md4+px)) {
+    padding: 22px 0px 12px 0px;
+  }
+
+  // .menu__items
+
+  // &__items {
+  // }
+
+  // .menu__list
+  &__list {
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 0px 25px 0px 25px;
+      @media (max-width: ($md3+px)) {
+        margin: 0px 15px 10px 15px;
+      }
+      @media (max-width: ($md3+px)) {
+        flex: 0 1 25%;
+      }
+    }
+    @media (max-width: ($md4+px)) {
+      flex-wrap: wrap;
+    }
+  }
+
+  // .menu__link
+
+  &__link {
+    // .menu__link_act
+    color: #3c3c3c;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    &:hover {
+      color: #ada074;
+      // @include anim((0.3s, 0s));
+    }
+    &_act {
+      color: #ada074;
+    }
+  }
+}
+
+// 3. CONTENT-ABOUT:========================================================================
+.about {
+  padding: 0px 0px 60px 0px;
+  @media (max-width: ($md3+px)) {
+    margin: 0px 0px 10px 0px;
+  }
+
+  // .about__header-block
+
+  &__header-block {
+    margin: 0px 0px 65px 0px;
+    @media (max-width: ($md3+px)) {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+
+  // .about__body
+
+  &__body {
+    text-align: center;
+  }
+
+  // .about__row
+
+  &__row {
+    @include flexboxinline();
+    margin: 0px -15px 0px -15px;
+    @media (max-width: ($md3+px)) {
+      display: block;
+    }
+  }
+
+  // .about__column
+
+  &__column {
+    // this margin is for if elements turn into row at small mobile phones:
+    margin: 0px 0px 30px 0px;
+    // ____________________________________________
+    flex: 0 1 33.33%;
+    padding: 0px 15px 0px 15px;
+  }
+
+  // .about__item
+
+  &__item {
+    text-align: center;
+    max-width: 260px;
+    @media (max-width: ($md3+px)) {
+      max-width: none;
+    }
+  }
+
+  // .about__icon
+
+  &__icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 1px solid #f2f2f2;
+    @include flexboxinline();
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 40px 0px;
+    @media (max-width: ($md3+px)) {
+      margin: 0px 0px 15px 0px;
+    }
+    // moving arrow to left a little bit:
+    &_l {
+      .img {
+        position: relative;
+        left: 5px;
+      }
+    }
+  }
+
+  // .about__title
+
+  &__title {
+    margin: 0px 0px 33px 0px;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 3.52px;
+    // my addition:
+    &_i {
+      &:first-letter {
+        text-transform: lowercase;
+      }
+    }
+    @media (max-width: ($md2+px)) {
+      font-size: 18px;
+      margin: 0px 0px 25px 0px;
+    }
+    @media (max-width: ($md3+px)) {
+      margin: 0px 0px 15px 0px;
+    }
+  }
+
+  // .about__text
+
+  &__text {
+    color: #868585;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 300;
+  }
+}
+
+// 4. CONTENT-PORTFOLIO:==============================================
+
+.portfolio {
+  background-color: #f3f3f3;
+  padding: 105px 0px 60px 0px;
+
+  // .portfolio__header-block
+
+  &__header-block {
+    margin: 0px 0px 50px 0px;
+  }
+
+  // .portfolio__filter
+
+  &__filter {
+    margin: 0px 0px 135px 0px;
+  }
+
+  // .portfolio__items
+
+  &__items {
+    @include flexbox();
+    flex-wrap: wrap;
+    margin: 0px -15px 0px -15px;
+  }
+
+  // .portfolio__column
+
+  &__column {
+    flex: 0 1 50%;
+    padding: 0px 15px 0px 15px;
+    margin: 0px 0px 30px 0px;
+  }
+
+  // .portfolio__item
+
+  &__item {
+    // squeeze images:
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // .portfolio__footer
+
+  &__footer {
+    text-align: center;
+    padding: 35px 0px 0px 0px;
+  }
+
+  // .portfolio__btn
+
+  &__btn {
+  }
+}
+
+.filter {
+  // .filter__list
+
+  &__list {
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+  }
+
+  // .filter__item
+
+  &__item {
+    color: #3c3c3c;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0px 25px 0px 0px;
+    cursor: pointer;
+    &.active {
+      color: #ada074;
+    }
+  }
+}

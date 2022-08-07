@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>017-03</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- 1. BLOCK" -->
+    <div class="wrapper">
+      <div class="mainblock">
+        <div class="mainblock__content">
+          <div class="container">
+            <a href="#" class="mainblock__logo">
+              <img src="img/logo.png" alt="logo" />
+            </a>
+            <div class="mainblock__text">
+              <div class="mainblock__title">
+                Clear, smart, attractive design for your app, logo, website
+              </div>
+              <div class="mainblock__subtitle">for your app, logo, website</div>
+            </div>
+            <div class="mainblock__footer">
+              <!-- make additional block btn to use it in future and give it modificator "w" - white -->
+              <a href="#" class="mainblock__btn btn btn_w">
+                <span>READ MORE</span>
+              </a>
+              <a href="#" class="mainblock__arrow">
+                <img src="img/icons/arrow-down.png" alt="arrow" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- connect funtion ibg from start pattern scss in makes it background (fullscreen): -->
+        <!-- ibg it is js function -->
+        <!-- it is good for customer, it makes easy to change image right in html -->
+        <div class="mainblock__image ibg">
+          <img src="img/mainblock/bg.jpg" alt="background" />
+        </div>
+      </div>
+    </div>
+    <!-- 2. CONTENT: -->
+    <div class="content">
+      <div class="menu menu_mb">
+        <div class="container">
+          <nav class="menu__items">
+            <ul class="menu__list">
+              <li><a href="#" class="menu__link menu__link_act">HOME</a></li>
+              <li><a href="#" class="menu__link">ABOUT US</a></li>
+              <li><a href="#" class="menu__link">PORTFOLIO</a></li>
+              <li><a href="#" class="menu__link">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- 3. CONTENT-ABOUT: -->
+    <div class="about">
+      <div class="container">
+        <!-- separate block to use it again in my landing: -->
+        <div class="about__header-block header-block">
+          <div class="header-block__title">ABOUT</div>
+          <div class="header-block__subtitle">
+            We specialize in contemporary, functional, and stunning websites
+            with design that really brings that "WOW" factor. In our design
+            process, we make sure to stay one step ahead of the latest trends,
+            never forgetting to abide by key web standards.
+          </div>
+        </div>
+        <div class="about__body">
+          <div class="about__row">
+            <div class="about__column">
+              <div class="about__item">
+                <div class="about__icon">
+                  <img src="img/about/01.png" alt="01" />
+                </div>
+                <div class="about__title">WEB</div>
+                <div class="about__text">
+                  We tend to deliver unique and functional design, through
+                  innovation and creativity.
+                </div>
+              </div>
+            </div>
+            <div class="about__column">
+              <div class="about__item">
+                <div class="about__icon">
+                  <img src="img/about/02.png" alt="02" />
+                </div>
+                <div class="about__title about__title_i">iOS AND ANDROID</div>
+                <div class="about__text">
+                  We seek to bring new businesses and customers closer together
+                  through valuable insights and proper targeting.
+                </div>
+              </div>
+            </div>
+            <div class="about__column">
+              <div class="about__item">
+                <div class="about__icon about__icon_l">
+                  <img src="img/about/03.png" alt="03" />
+                </div>
+                <div class="about__title">MARKETING</div>
+                <div class="about__text">
+                  We’ll help you establish the right goals and build the right
+                  paths. Success depends on setting the right intention.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 4. CONTENT-PORTFOLIO: -->
+    <div class="portfolio">
+      <div class="container">
+        <!-- here we use the same block again in my landing: -->
+        <div class="portfolio__header-block header-block">
+          <div class="header-block__title">PORTFOLIO</div>
+        </div>
+        <nav class="portfolio__filter filter">
+          <ul class="filter__list">
+            <li data-filter="1" class="filter__item active">ALL</li>
+            <li data-filter="2" class="filter__item">WEB</li>
+            <li data-filter="3" class="filter__item">APPS</li>
+            <li data-filter="4" class="filter__item">OTHER</li>
+          </ul>
+        </nav>
+        <div class="portfolio__items gallery">
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-01.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-01.png" alt="portfolio" />
+            </a>
+          </div>
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-02.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-02.png" alt="portfolio" />
+            </a>
+          </div>
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-03.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-03.png" alt="portfolio" />
+            </a>
+          </div>
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-04.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-04.png" alt="portfolio" />
+            </a>
+          </div>
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-05.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-05.png" alt="portfolio" />
+            </a>
+          </div>
+          <div class="portfolio__column">
+            <!-- for the zoom effect we adding the path in the href -->
+            <a href="img/portfolio/portfolio-06.png" class="portfolio__item">
+              <img src="img/portfolio/portfolio-06.png" alt="portfolio" />
+            </a>
+          </div>
+        </div>
+        <div class="portfolio__footer">
+          <a href="#" class="portfolio__btn btn btn_b">
+            <span>READ MORE</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- @import "foot  html" -->
+  </body>
+</html>
+<!-- @import "js html" -->
+<script src="js/script.js"></script>

@@ -1,0 +1,110 @@
+// BASIC-BLOCK===========================================================
+.header-block {
+  text-align: center;
+
+  // .header-block__title
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 8.95px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0px 0px 30px 0px;
+    &::after {
+      content: "";
+      width: 80px;
+      height: 1px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 68px 0px 0px -40.5px;
+      background-color: #000000;
+    }
+  }
+
+  // .header-block__subtitle
+
+  &__subtitle {
+    font-size: 14px;
+    color: rgb(134, 133, 133);
+    line-height: 1.857;
+    font-weight: 300;
+    padding: 30px 0px 0px 0px;
+    max-width: 700px;
+    margin: 0px auto;
+  }
+}
+
+// CLASSES-TEMPLETTES=====================================================
+.row:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.uah:after {
+  content: "₴";
+}
+// =======================================================================
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+// =======================================================================
+ol.counter {
+  list-style-type: none;
+  counter-reset: item;
+  li {
+    position: relative;
+    padding: 0px 0px 0px 45px;
+    &::before {
+      counter-increment: item;
+      content: counter(item);
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #818181;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
+
+// =======================================================================
+.ellipsis {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.es {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// =======================================================================
+.table {
+  display: table;
+  font-size: 0;
+  width: 100%;
+  // table-layout: fixed;
+}
+
+.trow {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  &.full {
+    width: 100%;
+  }
+}

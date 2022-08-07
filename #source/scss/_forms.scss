@@ -1,0 +1,204 @@
+// <FORM>======================================================================
+// .form {
+// }
+
+.form-row {
+  // @include flexbox();
+  margin: 0px -15px 0px -15px;
+}
+
+form__coluimn {
+  padding: 0px 15px 0px 15px;
+}
+
+// .form-input {
+// }
+
+// .form-button {
+// }
+// </FORM>======================================================================
+
+// <BUTTONS>====================================================================
+.btn {
+  display: inline-block;
+  height: 47px;
+  padding: 0px 42px 0px 42px;
+  // we adding 1+1px borders (without borders - line-height: 47px; to be in center):
+  line-height: 44px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.67px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    // @include scale(0);
+    // @include anim(0.3s, 0s);
+  }
+  &_w {
+    color: #fff;
+    border: 1px solid #fff;
+    // &:after {
+    //   background-color: #fff;
+    // }
+  }
+
+  &_b {
+    color: #000;
+    border: 1px solid #000;
+    // &:after {
+    //   background-color: #000;
+    // }
+  }
+
+  span {
+    // @include anim(0.3s, 0s);
+    z-index: 1;
+    position: relative;
+  }
+  &:hover {
+    &.btn_w {
+      color: #000;
+      // improvisation:
+      background-color: #fff;
+    }
+    &.btn_b {
+      color: #fff;
+      // improvisation:
+      background-color: #000;
+    }
+    // &::after {
+    // @include scale(1);
+    // }
+  }
+  &.fw {
+    width: 100%;
+  }
+}
+// </BUTTONS>====================================================================
+
+// <SELECT>=======================================================================
+.select-block {
+  position: relative;
+}
+
+.select__label {
+  z-index: 2;
+  position: absolute;
+  top: 8px;
+  background-color: #f7f7f7;
+  padding: 0px 5px 0px 5px;
+  color: #979797;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 13px;
+  // here is hidden code must be...
+}
+
+.select {
+  position: relative;
+  cursor: pointer;
+  .select-title {
+    z-index: 1;
+    width: 100%;
+    height: 55px;
+    border: 1px solid#dedede;
+    position: relative;
+    background-color: #fff;
+  }
+  .select-title__arrow {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 45px;
+    height: 100%;
+    background: url("../img/icons/arrow-down.png") center no-repeat;
+  }
+  .select-title__value {
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 53px;
+    display: block;
+    overflow: hidden;
+    padding: 0px 45px 0px 25px;
+    white-space: nowrap;
+    text-transform: none;
+    text-overflow: ellipsis;
+  }
+  .select-options {
+    position: absolute;
+    z-index: 10;
+    top: 54px;
+    display: block;
+    min-width: 100%;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    padding: 10px 20px 10px 25px;
+  }
+}
+.select-optioms-scroll {
+  max-height: 80px;
+  overflow: auto;
+}
+
+.select-options-list {
+  padding: 0px 0px 0px 0px;
+}
+
+.select-options__value {
+  color: #000;
+  font-size: 20px;
+  margin: 0px 0px 15px 0px;
+  &:last-child {
+    margin: 0px 0px 0px 0px;
+  }
+  &:hover {
+    color: #000;
+  }
+}
+// </SELECT>=======================================================================
+
+// <INPUT>=======================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.input {
+  border: 1px solid #000;
+  height: 50px;
+  border-radius: 0 !important;
+  margin: 0px 0px 20px 0px;
+  width: 100%;
+  display: block;
+  padding: 0px 20px 0px 20px;
+  // &:focus {
+  // }
+  // &:err {
+  // }
+}
+
+textarea.input {
+  resize: none;
+  padding: 0px 0px 0px 0px;
+}
+// </INPUT>=======================================================================
+
+// <CHECK>=======================================================================
+.check {
+  position: relative;
+  padding: 0px 0px 0px 25px;
+  color: #5f5f5f;
+  line-height: 18px;
+  cursor: pointer;
+}
+// </CHECK>=======================================================================
