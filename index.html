@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>017-03</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <body>
     <!-- 1. BLOCK" -->
@@ -24,10 +25,10 @@
             </div>
             <div class="mainblock__footer">
               <!-- make additional block btn to use it in future and give it modificator "w" - white -->
-              <a href="#" class="mainblock__btn btn btn_w">
+              <a href="#content" class="mainblock__btn btn btn_w goto">
                 <span>READ MORE</span>
               </a>
-              <a href="#" class="mainblock__arrow">
+              <a href="#content" class="mainblock__arrow goto">
                 <img src="img/icons/arrow-down.png" alt="arrow" />
               </a>
             </div>
@@ -42,7 +43,7 @@
       </div>
     </div>
     <!-- 2. CONTENT: -->
-    <div class="content">
+    <div class="content" id="content">
       <div class="menu menu_mb">
         <div class="container">
           <nav class="menu__items">
@@ -55,55 +56,224 @@
           </nav>
         </div>
       </div>
-    </div>
-    <!-- 3. CONTENT-ABOUT: -->
-    <div class="about">
-      <div class="container">
-        <!-- separate block to use it again in my landing: -->
-        <div class="about__header-block header-block">
-          <div class="header-block__title">ABOUT</div>
-          <div class="header-block__subtitle">
-            We specialize in contemporary, functional, and stunning websites
-            with design that really brings that "WOW" factor. In our design
-            process, we make sure to stay one step ahead of the latest trends,
-            never forgetting to abide by key web standards.
+
+      <!-- 2-1. CONTENT-ABOUT: -->
+      <div class="about">
+        <div class="container">
+          <!-- separate block to use it again in my landing: -->
+          <div class="about__header-block header-block">
+            <div class="header-block__title">ABOUT</div>
+            <div class="header-block__subtitle">
+              We specialize in contemporary, functional, and stunning websites
+              with design that really brings that "WOW" factor. In our design
+              process, we make sure to stay one step ahead of the latest trends,
+              never forgetting to abide by key web standards.
+            </div>
+          </div>
+          <div class="about__body">
+            <div class="about__row">
+              <div class="about__column">
+                <div class="about__item">
+                  <div class="about__icon">
+                    <img src="img/about/01.png" alt="01" />
+                  </div>
+                  <div class="about__title">WEB</div>
+                  <div class="about__text">
+                    We tend to deliver unique and functional design, through
+                    innovation and creativity.
+                  </div>
+                </div>
+              </div>
+              <div class="about__column">
+                <div class="about__item">
+                  <div class="about__icon">
+                    <img src="img/about/02.png" alt="02" />
+                  </div>
+                  <div class="about__title about__title_i">iOS AND ANDROID</div>
+                  <div class="about__text">
+                    We seek to bring new businesses and customers closer
+                    together through valuable insights and proper targeting.
+                  </div>
+                </div>
+              </div>
+              <div class="about__column">
+                <div class="about__item">
+                  <div class="about__icon about__icon_l">
+                    <img src="img/about/03.png" alt="03" />
+                  </div>
+                  <div class="about__title">MARKETING</div>
+                  <div class="about__text">
+                    We’ll help you establish the right goals and build the right
+                    paths. Success depends on setting the right intention.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="about__body">
-          <div class="about__row">
-            <div class="about__column">
-              <div class="about__item">
-                <div class="about__icon">
-                  <img src="img/about/01.png" alt="01" />
-                </div>
-                <div class="about__title">WEB</div>
-                <div class="about__text">
-                  We tend to deliver unique and functional design, through
-                  innovation and creativity.
-                </div>
+      </div>
+      <!-- 2-2. CONTENT-PORTFOLIO: -->
+      <div class="portfolio">
+        <div class="container">
+          <!-- here we use the same block again in my landing: -->
+          <div class="portfolio__header-block header-block">
+            <div class="header-block__title">PORTFOLIO</div>
+          </div>
+          <nav class="portfolio__filter filter">
+            <ul class="filter__list">
+              <li data-filter="1" class="filter__item active">ALL</li>
+              <li data-filter="2" class="filter__item">WEB</li>
+              <li data-filter="3" class="filter__item">APPS</li>
+              <li data-filter="4" class="filter__item">OTHER</li>
+            </ul>
+          </nav>
+          <div class="portfolio__items gallery">
+            <!-- create modificators for filters according to "li": -->
+            <div class="portfolio__column f_2">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-01.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-01.png" alt="portfolio" />
+              </a>
+            </div>
+            <div class="portfolio__column f_2">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-02.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-02.png" alt="portfolio" />
+              </a>
+            </div>
+            <div class="portfolio__column f_2">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-03.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-03.png" alt="portfolio" />
+              </a>
+            </div>
+            <div class="portfolio__column f_3">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-04.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-04.png" alt="portfolio" />
+              </a>
+            </div>
+            <div class="portfolio__column f_4">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-05.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-05.png" alt="portfolio" />
+              </a>
+            </div>
+            <div class="portfolio__column f_4">
+              <!-- for the zoom effect we adding the path in the href -->
+              <a href="img/portfolio/portfolio-06.png" class="portfolio__item">
+                <img src="img/portfolio/portfolio-06.png" alt="portfolio" />
+              </a>
+            </div>
+          </div>
+          <div class="portfolio__footer">
+            <a href="#" class="portfolio__btn btn btn_b">
+              <span>READ MORE</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- 2-3. CONTENT-PARTNERS: -->
+      <div class="partners">
+        <div class="container">
+          <div class="partners__title">Our partners</div>
+          <div class="partners__items">
+            <div class="partners__column">
+              <div class="partners__item">
+                <img src="img/partners/iii.png" alt="icon-01" />
               </div>
             </div>
-            <div class="about__column">
-              <div class="about__item">
-                <div class="about__icon">
-                  <img src="img/about/02.png" alt="02" />
-                </div>
-                <div class="about__title about__title_i">iOS AND ANDROID</div>
-                <div class="about__text">
-                  We seek to bring new businesses and customers closer together
-                  through valuable insights and proper targeting.
-                </div>
+            <div class="partners__column">
+              <div class="partners__item">
+                <img src="img/partners/archiq.png" alt="icon-02" />
               </div>
             </div>
-            <div class="about__column">
-              <div class="about__item">
-                <div class="about__icon about__icon_l">
-                  <img src="img/about/03.png" alt="03" />
+            <div class="partners__column">
+              <div class="partners__item">
+                <img src="img/partners/thomsoon.png" alt="icon-03" />
+              </div>
+            </div>
+            <div class="partners__column">
+              <div class="partners__item">
+                <img src="img/partners/alex.png" alt="icon-04" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2-4. CONTENT-CONTACTS: -->
+      <div class="contacts">
+        <div class="container">
+          <div class="contacts__header-block header-block">
+            <div class="header-block__title">CONTACT</div>
+          </div>
+          <div class="contacts__body">
+            <div class="contacts__column">
+              <form action="" class="contacts__form form-contacts">
+                <div class="form-contacts__body">
+                  <div class="form-contacts__row">
+                    <div class="form-contacts__column">
+                      <div class="form-contacts__input">
+                        <div class="form-contacts__label">YOUR NAME</div>
+                        <input
+                          type="text"
+                          class="input"
+                          autocomplete="off"
+                          name="form[]"
+                          data-value=""
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-contacts__column">
+                      <div class="form-contacts__input">
+                        <div class="form-contacts__label">YOUR E-MAIL</div>
+                        <input
+                          type="email"
+                          class="input email"
+                          autocomplete="off"
+                          name="form[]"
+                          data-value=""
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-contacts__input">
+                    <div class="form-contacts__label">MESSAGE</div>
+                    <textarea
+                      class="input"
+                      autocomplete="off"
+                      name="form[]"
+                      data-value=""
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="form-contacts__btn btn btn_b">
+                    <span>SEND</span>
+                  </button>
                 </div>
-                <div class="about__title">MARKETING</div>
-                <div class="about__text">
-                  We’ll help you establish the right goals and build the right
-                  paths. Success depends on setting the right intention.
+              </form>
+            </div>
+            <div class="contacts__column">
+              <div class="contacts__content">
+                <div class="contacts__text">
+                  Have an idea for a project? Just looking to explore and see
+                  the possibilities? I'm here to help.
+                </div>
+                <div class="contacts__name">Postma Elena</div>
+                <div class="contacts__social social">
+                  <a href="#" class="social_item">
+                    <img src="/img/icons/facebook.png" alt="facebook" />
+                  </a>
+                  <a href="#" class="social_item">
+                    <img src="/img/icons/linkedin.png" alt="linkedin" />
+                  </a>
+                </div>
+                <div class="contacts__e-mail">
+                  e-mail:
+                  <a href="mailto:postma.elena@gmail.com"
+                    >postma.elena@gmail.com</a
+                  >
                 </div>
               </div>
             </div>
@@ -111,67 +281,27 @@
         </div>
       </div>
     </div>
-    <!-- 4. CONTENT-PORTFOLIO: -->
-    <div class="portfolio">
+    <!-- 2-5. FOOTER: -->
+    <footer class="footer">
       <div class="container">
-        <!-- here we use the same block again in my landing: -->
-        <div class="portfolio__header-block header-block">
-          <div class="header-block__title">PORTFOLIO</div>
-        </div>
-        <nav class="portfolio__filter filter">
-          <ul class="filter__list">
-            <li data-filter="1" class="filter__item active">ALL</li>
-            <li data-filter="2" class="filter__item">WEB</li>
-            <li data-filter="3" class="filter__item">APPS</li>
-            <li data-filter="4" class="filter__item">OTHER</li>
-          </ul>
-        </nav>
-        <div class="portfolio__items gallery">
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-01.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-01.png" alt="portfolio" />
-            </a>
-          </div>
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-02.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-02.png" alt="portfolio" />
-            </a>
-          </div>
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-03.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-03.png" alt="portfolio" />
-            </a>
-          </div>
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-04.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-04.png" alt="portfolio" />
-            </a>
-          </div>
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-05.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-05.png" alt="portfolio" />
-            </a>
-          </div>
-          <div class="portfolio__column">
-            <!-- for the zoom effect we adding the path in the href -->
-            <a href="img/portfolio/portfolio-06.png" class="portfolio__item">
-              <img src="img/portfolio/portfolio-06.png" alt="portfolio" />
-            </a>
-          </div>
-        </div>
-        <div class="portfolio__footer">
-          <a href="#" class="portfolio__btn btn btn_b">
-            <span>READ MORE</span>
+        <div class="footer__body">
+          <a href="#" class="footer__logo">
+            <img src="img/logo-footer.png" alt="footer-logo" />
           </a>
+          <nav class="footer__menu">
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Home</a></li>
+              <li><a href="#" class="footer__link">Facebook</a></li>
+              <li><a href="#" class="footer__link">linkedin</a></li>
+              <li><a href="#" class="footer__link">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="footer__text">© 2015. All Rights Reserved</div>
         </div>
       </div>
-    </div>
+    </footer>
     <!-- @import "foot  html" -->
+    <link rel="import" href="footer.html" />
   </body>
 </html>
 <!-- @import "js html" -->

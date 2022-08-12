@@ -20,6 +20,10 @@
       left: 50%;
       margin: 68px 0px 0px -40.5px;
       background-color: #000000;
+      // improvisation:
+      @media (max-width: ($md3+px)) {
+        margin: 48px 0px 0px -40.5px;
+      }
     }
   }
 

@@ -3,11 +3,11 @@
 // }
 
 .form-row {
-  // @include flexbox();
+  @include flexbox();
   margin: 0px -15px 0px -15px;
 }
 
-form__coluimn {
+.form__coluimn {
   padding: 0px 15px 0px 15px;
 }
 
@@ -18,6 +18,26 @@ form__coluimn {
 // }
 // </FORM>======================================================================
 
+// <MIXINES:>=====================================================================
+@mixin anim($time, $delay) {
+  -webkit-transition: all $time ease $delay;
+  -moz-transition: all $time ease $delay;
+  -ms-transition: all $time ease $delay;
+  -o-transition: all $time ease $delay;
+  // improvisation:
+  transition: all $time ease $delay;
+}
+
+@mixin scale($num) {
+  -moz-transform: scale($num);
+  -ms-transform: scale($num);
+  -webkit-transform: scale($num);
+  -o-transform: scale($num);
+  transform: scale($num);
+}
+
+// </MIXINES>=====================================================================
+
 // <BUTTONS>====================================================================
 .btn {
   display: inline-block;
@@ -26,6 +46,7 @@ form__coluimn {
   // we adding 1+1px borders (without borders - line-height: 47px; to be in center):
   line-height: 44px;
   text-transform: uppercase;
+  background-color: transparent;
   font-size: 16px;
   letter-spacing: 0.67px;
   position: relative;
@@ -36,44 +57,40 @@ form__coluimn {
     height: 100%;
     top: 0;
     left: 0;
-    // @include scale(0);
-    // @include anim(0.3s, 0s);
+    @include scale(0);
+    @include anim(0.3s, 0s);
   }
   &_w {
     color: #fff;
     border: 1px solid #fff;
-    // &:after {
-    //   background-color: #fff;
-    // }
+    &:after {
+      background-color: #fff;
+    }
   }
 
   &_b {
     color: #000;
     border: 1px solid #000;
-    // &:after {
-    //   background-color: #000;
-    // }
+    &:after {
+      background-color: #000;
+    }
   }
 
   span {
-    // @include anim(0.3s, 0s);
+    @include anim(0.3s, 0s);
     z-index: 1;
     position: relative;
   }
   &:hover {
     &.btn_w {
       color: #000;
-      // improvisation:
-      background-color: #fff;
     }
     &.btn_b {
       color: #fff;
-      // improvisation:
-      background-color: #000;
     }
-    // &::after {
-    // @include scale(1);
-    // }
+    &::after {
+      @include scale(1);
+    }
   }
   &.fw {
     width: 100%;
@@ -174,22 +191,28 @@ textarea {
 }
 
 .input {
-  border: 1px solid #000;
+  position: relative;
+  border-top: 1px solid #000;
   height: 50px;
   border-radius: 0 !important;
-  margin: 0px 0px 20px 0px;
+  font-size: 15px;
   width: 100%;
   display: block;
   padding: 0px 20px 0px 20px;
-  // &:focus {
-  // }
+  background-color: #f8f7f7;
+  &:focus {
+    border-top: 1px solid blue;
+  }
+  // works with js only:
   // &:err {
+  //   border-top: 1px solid red;
   // }
 }
 
 textarea.input {
   resize: none;
-  padding: 0px 0px 0px 0px;
+  height: 117px;
+  padding: 10px 20px 10px 20px;
 }
 // </INPUT>=======================================================================
 
